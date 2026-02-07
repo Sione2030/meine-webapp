@@ -30,4 +30,5 @@ jobs:
         with:
           app-name: 'cooler'
           slot-name: 'Production'
-          package: ./meine-webapp   # <-- hier dein Ordner mit index.html
+          package: ./meine-webapp/index.html   # <-- hier dein Ordner mit index.html
+
