@@ -1,0 +1,24 @@
+name: Deploy HTML to Azure Web App
+
+# Läuft automatisch, wenn du in den Branch 'main' pushst
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Holt den Code aus deinem GitHub-Repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Deployt deine HTML-Webseite auf Azure App Service
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: cooler                         # Name deiner Web App in Azure
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}  # Secret aus GitHub
+          package: .                               # Deployt den gesamten Ordner mit index.html
