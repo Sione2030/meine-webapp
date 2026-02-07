@@ -61,5 +61,6 @@ jobs:
         with:
           app-name: 'cooler'
           slot-name: 'Production'
-          package: .
+          package: ./meine-webapp
+
           
